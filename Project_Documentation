@@ -1,0 +1,316 @@
+# Project Documentation
+
+# Olist E-Commerce Analytics Suite
+
+**Author:** Sanskriti Verma
+
+**Role:** Data Analyst | Business Intelligence Developer
+
+---
+
+# Project Summary
+
+The Olist E-Commerce Analytics Suite is an end-to-end Business Intelligence project developed using the Brazilian Olist Marketplace dataset. The project demonstrates the complete analytics workflow, beginning with raw data preparation and ending with an interactive Power BI dashboard that supports business decision-making.
+
+The project combines Microsoft Excel, SQL, Power Query, DAX, and Power BI to transform raw transactional data into meaningful business insights.
+
+---
+
+# Project Workflow
+
+```
+Raw CSV Dataset
+        │
+        ▼
+Microsoft Excel
+(Data Cleaning & Validation)
+        │
+        ▼
+SQL
+(Data Audit & Exploratory Analysis)
+        │
+        ▼
+Power Query
+(Data Transformation)
+        │
+        ▼
+Star Schema Data Model
+        │
+        ▼
+DAX Measures
+        │
+        ▼
+Interactive Power BI Dashboard
+        │
+        ▼
+Business Insights & Recommendations
+```
+
+---
+
+# Dataset Overview
+
+The project uses the Brazilian Olist Marketplace dataset, which contains information about:
+
+* Customers
+* Orders
+* Sellers
+* Products
+* Payments
+* Reviews
+* Geolocation
+* Product Categories
+* Order Items
+
+The data captures the complete lifecycle of an e-commerce order, from purchase to delivery and customer review.
+
+---
+
+# Phase 1 – Data Cleaning (Microsoft Excel)
+
+Before importing the data into Power BI, the datasets were reviewed and cleaned.
+
+Tasks performed:
+
+* Verified column consistency
+* Checked for missing values
+* Removed duplicate records where necessary
+* Standardized date and number formats
+* Inspected data quality
+* Validated datasets before analysis
+
+---
+
+# Phase 2 – Data Audit (SQL)
+
+A SQL data audit was performed to better understand the dataset and validate data quality.
+
+The audit included:
+
+* Exploring database structure
+* Understanding relationships between tables
+* Validating primary and foreign keys
+* Identifying missing values
+* Detecting duplicate records
+* Checking order status distribution
+* Analyzing customer and seller activity
+* Exploring payment methods
+* Reviewing product categories
+* Generating exploratory business insights
+
+This phase provided confidence that the data was suitable for reporting and helped identify important business questions for the dashboard.
+
+---
+
+# Phase 3 – Data Transformation (Power Query)
+
+Power Query was used to prepare the data for reporting.
+
+Tasks included:
+
+* Importing multiple CSV files
+* Renaming columns
+* Correcting data types
+* Removing unnecessary columns
+* Creating calculated columns where required
+* Preparing data for star schema modeling
+
+---
+
+# Data Modeling
+
+A Star Schema was implemented to improve report performance.
+
+## Fact Table
+
+* Fact_Orders
+
+## Dimension Tables
+
+* Customers
+* Sellers
+* Products
+* Order Items
+* Payments
+* Reviews
+* Calendar
+
+Relationships were created between fact and dimension tables to support efficient filtering and DAX calculations.
+
+---
+
+# DAX Development
+
+DAX measures were created to calculate dynamic business metrics throughout the report.
+
+The measures include:
+
+### Financial Metrics
+
+* Total Revenue
+* Gross Profit
+* Profit Margin
+* Average Order Value
+* Freight Cost %
+
+### Sales Metrics
+
+* Total Orders
+* Products Sold
+* Revenue by Category
+* Revenue by Seller
+* Monthly Revenue
+* Month-over-Month Growth
+
+### Customer Metrics
+
+* Total Customers
+* Average Review Score
+* Positive Reviews
+* Negative Reviews
+* Customer Rating Distribution
+
+### Logistics Metrics
+
+* Total Sellers
+* Order Fulfillment Rate
+* On-Time Delivery Percentage
+* Average Delivery Time
+* Delivery Delay Analysis
+
+These measures respond dynamically to slicers, allowing users to explore the data interactively.
+
+---
+
+# Dashboard Pages
+
+## Home Dashboard
+
+Provides navigation to all report pages using buttons and bookmarks.
+
+---
+
+## Executive Dashboard
+
+Purpose:
+
+Provide a high-level overview of business performance.
+
+Contains:
+
+* Revenue KPIs
+* Customer KPIs
+* Seller KPIs
+* Revenue Trends
+* Revenue by State
+* Revenue by Seller
+* Product Category Performance
+* Order Funnel
+* Executive Insights
+
+---
+
+## Sales & Product Dashboard
+
+Purpose:
+
+Analyze sales performance and product trends.
+
+Contains:
+
+* Revenue Analysis
+* Gross Profit
+* Profit Margin
+* Products Sold
+* Payment Method Analysis
+* Product Category Analysis
+* Monthly Sales Trend
+* Cancellation Analysis
+
+---
+
+## Customer Experience Dashboard
+
+Purpose:
+
+Evaluate customer satisfaction and delivery performance.
+
+Contains:
+
+* Review Scores
+* Positive Reviews
+* Negative Reviews
+* Delivery Performance
+* Delivery Delay Analysis
+* Customer Satisfaction Trends
+
+---
+
+## Insights Dashboard
+
+Purpose:
+
+Summarize important findings and provide strategic recommendations.
+
+Contains:
+
+* Business Summary
+* Growth Opportunities
+* Risks
+* Challenges
+* Recommended Actions
+
+---
+
+# Key Business Insights
+
+* Revenue shows strong seasonal growth during November.
+* Health & Beauty is the highest revenue-generating category.
+* Bed Bath & Table records the highest product sales volume.
+* Credit Card is the most frequently used payment method.
+* Order fulfillment exceeds 97%.
+* Customer ratings decrease as delivery delays increase.
+* Delivery performance differs across states, highlighting opportunities for logistics optimization.
+
+---
+
+# Skills Demonstrated
+
+### Microsoft Excel
+
+* Data Cleaning
+* Data Validation
+* Data Preparation
+
+### SQL
+
+* Data Auditing
+* Joins
+* Aggregate Functions
+* Window Functions
+* Exploratory Data Analysis
+
+### Power BI
+
+* Power Query
+* Data Modeling
+* DAX
+* Dashboard Design
+* KPI Development
+* Interactive Visualizations
+
+### Business Intelligence
+
+* Sales Analytics
+* Customer Analytics
+* Product Analytics
+* Logistics Analytics
+* Business Storytelling
+
+---
+
+# Project Outcome
+
+This project demonstrates the complete Business Intelligence lifecycle, beginning with data cleaning and SQL-based data auditing, followed by data transformation, star schema modeling, DAX development, and dashboard creation in Power BI.
+
+The final solution enables users to monitor business performance, identify trends, evaluate customer experience, and make informed decisions through interactive dashboards and data-driven insights.
