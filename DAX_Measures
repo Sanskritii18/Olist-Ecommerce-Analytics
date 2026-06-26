@@ -1,0 +1,219 @@
+# DAX Measures Documentation
+
+## Overview
+
+This document contains the primary DAX measures developed for the **Olist E-Commerce Analytics Dashboard**. These measures were used to calculate dynamic KPIs, financial metrics, customer insights, logistics performance, and interactive visualizations throughout the Power BI report.
+
+---
+
+# Financial Measures
+
+## Total Revenue
+
+```DAX
+Total Revenue =
+SUM(order_payments[payment_value])
+```
+
+**Purpose:** Calculates the total revenue generated from all customer payments.
+
+---
+
+## Gross Profit
+
+```DAX
+Gross Profit =
+[Total Revenue] - SUM(order_items[freight_value])
+```
+
+**Purpose:** Calculates profit after subtracting freight costs.
+
+---
+
+## Profit Margin %
+
+```DAX
+Profit Margin % =
+DIVIDE([Gross Profit],[Total Revenue],0)
+```
+
+**Purpose:** Calculates the percentage of revenue retained as profit.
+
+---
+
+## Average Order Value
+
+```DAX
+Average Order Value =
+DIVIDE([Total Revenue],[Total Orders],0)
+```
+
+**Purpose:** Calculates the average revenue generated per order.
+
+---
+
+# Sales Measures
+
+## Total Orders
+
+```DAX
+Total Orders =
+DISTINCTCOUNT(orders[order_id])
+```
+
+**Purpose:** Counts unique customer orders.
+
+---
+
+## Products Sold
+
+```DAX
+Products Sold =
+COUNT(order_items[product_id])
+```
+
+**Purpose:** Counts total products sold.
+
+---
+
+## Total Customers
+
+```DAX
+Total Customers =
+DISTINCTCOUNT(customers[customer_unique_id])
+```
+
+**Purpose:** Counts unique customers.
+
+---
+
+## Total Sellers
+
+```DAX
+Total Sellers =
+DISTINCTCOUNT(sellers[seller_id])
+```
+
+**Purpose:** Counts active sellers.
+
+---
+
+# Customer Experience Measures
+
+## Average Review Score
+
+```DAX
+Average Review Score =
+AVERAGE(order_reviews[review_score])
+```
+
+**Purpose:** Calculates the average customer rating.
+
+---
+
+## Positive Reviews
+
+```DAX
+Positive Reviews =
+CALCULATE(
+COUNTROWS(order_reviews),
+order_reviews[review_score] >= 4
+)
+```
+
+**Purpose:** Counts reviews with ratings of 4 or 5.
+
+---
+
+## Negative Reviews
+
+```DAX
+Negative Reviews =
+CALCULATE(
+COUNTROWS(order_reviews),
+order_reviews[review_score] <= 2
+)
+```
+
+**Purpose:** Counts low-rated customer reviews.
+
+---
+
+# Logistics Measures
+
+## Average Delivery Days
+
+```DAX
+Average Delivery Days =
+AVERAGEX(
+orders,
+DATEDIFF(
+orders[order_delivered_customer_date],
+orders[order_purchase_timestamp],
+DAY
+)
+)
+```
+
+**Purpose:** Calculates the average delivery duration.
+
+---
+
+## Order Fulfillment Rate
+
+```DAX
+Order Fulfillment Rate =
+DIVIDE(
+[Delivered Orders],
+[Total Orders],
+0
+)
+```
+
+**Purpose:** Measures the percentage of successfully delivered orders.
+
+---
+
+# Time Intelligence
+
+## Monthly Revenue
+
+```DAX
+Monthly Revenue =
+CALCULATE(
+[Total Revenue],
+DATESMTD(Calendar[Date])
+)
+```
+
+**Purpose:** Calculates revenue for the current month.
+
+---
+
+## Month-over-Month Growth
+
+```DAX
+MoM Growth % =
+DIVIDE(
+[Total Revenue]-[Previous Month Revenue],
+[Previous Month Revenue],
+0
+)
+```
+
+**Purpose:** Measures monthly revenue growth.
+
+---
+
+# Summary
+
+These DAX measures enable:
+
+* Dynamic KPI Cards
+* Interactive filtering
+* Revenue analysis
+* Profitability analysis
+* Customer analytics
+* Logistics monitoring
+* Trend analysis
+* Executive reporting
